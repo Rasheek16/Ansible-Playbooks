@@ -1,0 +1,10 @@
+---
+- name: Hello world sample
+  hosts: w
+  tasks:
+    - name: Hello message
+      debug:
+        msg: "Hello world"
+        verbosity: 2
+...
+        

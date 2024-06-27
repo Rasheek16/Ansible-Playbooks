@@ -1,0 +1,23 @@
+---
+- name: templace module demo
+  hosts: localhost
+  become: true
+  vars:
+    page_title: 'place holder'
+    page_description: |
+      THis is my multiline
+      description.
+    ansible_connection: local
+    ansible_become_password: 
+  tasks:
+    - name: install nginx
+      ansible.builtin.apt:
+        name: nginx
+        state: latest
+    - name: apply template template
+      ansible.builtin.template:
+        src: placeholder/placeholder.html.j2
+        dest: /var/www/html/index.html
+
+  
+      

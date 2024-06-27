@@ -1,0 +1,21 @@
+---
+- name: Order of execution
+  hosts: w
+  pre_tasks:
+    - debug:
+        msg: 'Pre- task'
+      notify: my handler
+  roles:
+    - role1
+  tasks:
+    - debug:
+        msg: 'First task'
+      notify: my handler
+  post_tasks:
+    - debug:
+        msg: 'Post tasks'
+      notify: my handler
+  handlers:
+    - name: my handler
+      debug:
+        msg: Running my handler

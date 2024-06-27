@@ -1,0 +1,12 @@
+---
+- name: install httpd
+  hosts: w
+  become: true
+  become_method: sudo
+  become_user: root
+  tasks:
+    - name: install apache
+      ansible.builtin.apt:
+        name: apache2
+        state: present
+

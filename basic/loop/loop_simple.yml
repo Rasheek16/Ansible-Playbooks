@@ -1,0 +1,11 @@
+---
+- name: Check Service
+  hosts: w
+  tasks: 
+  - name: apache and mariadb running 
+    ansible.builtin.service:
+      name: "{{item}}"
+      state: started
+    loop:
+        - apache2
+        - mariadb

@@ -1,0 +1,13 @@
+---
+- name: Install a package
+  hosts: w
+  become: true
+  tasks:
+    - name: Install the package
+      ansible.builtin.apt:
+        name: wget
+        state: present
+      register: install_result
+    - name: debug
+      ansible.builtin.debug:
+        var: install_result

@@ -1,0 +1,7 @@
+---
+- name: facts_printall
+  hosts: w
+  tasks:
+    - name: Shut down debian like systems
+      ansible.builtin.command: /sbin/shutdown -t now
+      when: ansible_facts['os_family']=="Debian"

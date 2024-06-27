@@ -1,0 +1,13 @@
+---
+- name: copy demo
+  hosts: localhost
+  become: false
+  vars:
+    ansible_connection: local
+  tasks:
+    - name: copy example.txt
+      ansible.builtin.copy:
+        src: example.txt
+        dest: copy.txt
+        owner: 
+        mode: '0644'

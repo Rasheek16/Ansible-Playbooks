@@ -1,0 +1,10 @@
+---
+- name: read file on localhost
+  hosts: localhost
+  vars:
+    ansible_connection: local
+    contents: "{{lookup('file','example.txt')}}"
+  tasks:
+    - name: Print file
+      ansible.builtin.debug:
+        msg: "{{contents}}"

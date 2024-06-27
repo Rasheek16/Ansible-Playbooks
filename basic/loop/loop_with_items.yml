@@ -1,0 +1,12 @@
+---
+- name: Example_with_items
+  hosts: w
+  vars:
+    data:
+      - alice
+      - bob
+  tasks:
+  - name: Print values of data
+    ansible.builtin.debug:
+      msg: "{{item}}"
+    with_items: "{{data}}"

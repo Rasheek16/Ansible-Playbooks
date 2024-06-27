@@ -1,0 +1,15 @@
+---
+- name: Array sample
+  hosts: w
+  vars:
+    users:
+      alice:
+        firstname: Alice
+        homedir: /users/alice
+      bob:
+        firstname: Bob
+        homedir: /users/bob
+  tasks:
+    - name: "Print alice dir"
+      debug:
+        msg: "{{users.alice.homedir}}"

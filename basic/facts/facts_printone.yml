@@ -1,0 +1,7 @@
+---
+- name: facts_printall
+  hosts: w
+  tasks:
+    - name: Print one facts
+      ansible.builtin.debug:
+        var: "{{ ansible_facts['os_family']}}"

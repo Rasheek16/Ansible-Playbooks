@@ -1,0 +1,14 @@
+---
+- name: Users exist and are in correct position
+  hosts: w
+  tasks: 
+  - name: Users exist and are in correct groups
+    ansible.builtin.user:
+      name: "{{item.name}}"
+      state: absent
+      group: "{{item.group}}"
+    loop:
+      - name: alice
+        group: wheel
+      - name: bob
+        group: root
