@@ -1,7 +1,3 @@
-Here's a `README.md` file for your repository:
-
----
-
 # Ansible Workflows
 
 Welcome to my Ansible playbooks repository! This repo contains various Ansible playbooks categorized for different use cases. I'll be updating it regularly with new content.
