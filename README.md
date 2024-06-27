@@ -1,4 +1,4 @@
-# Ansible Workflows
+# Ansible Playbooks
 
 Welcome to my Ansible playbooks repository! This repo contains various Ansible playbooks categorized for different use cases. I'll be updating it regularly with new content.
 
