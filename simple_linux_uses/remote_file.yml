@@ -1,0 +1,15 @@
+---
+- name: slurp module demo
+  hosts: w
+  become: false
+  vars:
+    remotefile: "/proc/cpuinfo"
+  tasks: 
+    - name: slurp remote file
+      ansible.builtin.slurp:
+        src: "{{remotefile}}"
+      register: slurpfile
+  
+    - name: print remote file
+      ansible.builtin.debug:
+        msg: "{{slurpfile['content']|b64decode}}"
