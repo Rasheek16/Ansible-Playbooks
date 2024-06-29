@@ -7,7 +7,7 @@
     - name: Creating a dir
       ansible.builtin.file:
         path: "{{ mydir }}"
-        owner: rasheek
+        owner: ''
         group: users
         state: directory
         mode: '0644'
