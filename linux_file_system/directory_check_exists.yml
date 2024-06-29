@@ -1,0 +1,16 @@
+---
+- name: Check if the directory exists
+  hosts: w
+  become: false
+  vars: 
+    mydir: "./example"
+  tasks:
+    - name: Check if directory exists
+      ansible.builtin.stat:
+        path: "{{ mydir }}"
+      register: dir_to_check
+
+    - name: Directory found
+      ansible.builtin.debug:
+        msg: "Directory {{mydir}} present."
+      when: dir_to_check.stat.isdir is defined and dir_to_check.stat.isdir
