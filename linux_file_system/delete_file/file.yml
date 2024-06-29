@@ -1,0 +1,10 @@
+---
+- name: file module demo
+  hosts: w
+  vars:
+    myfile: './file.txt'
+  tasks:
+    - name: 'Deleting file'
+      ansible.builtin.file:
+        path: "{{myfile}}"
+        state: absent
