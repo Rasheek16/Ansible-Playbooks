@@ -1,0 +1,21 @@
+---
+- name: Check if file exists
+  hosts: w
+  become: false
+  vars: 
+    myfile: ./example.txt
+  tasks:
+    - name: Check if file exists
+      ansible.builtin.stat:
+        path: "{{ myfile }}"
+      register: file_data
+
+    - name: Report if file exists
+      ansible.builtin.debug:
+        msg: "The file {{ myfile }} exists"
+      when: file_data.stat.exists
+
+    - name: Report if file does not exist
+      ansible.builtin.debug:
+        msg: "The file {{ myfile }} does not exist"
+      when: not file_data.stat.exists
