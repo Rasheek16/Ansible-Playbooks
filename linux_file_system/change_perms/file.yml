@@ -1,0 +1,13 @@
+---
+- name: file module dmeo
+  hosts: w
+  vars:
+    myfile: './file.txt'
+  become: false
+  tasks:
+    - name: Check file permissions
+      ansible.builtin.file:
+        path: "{{myfile}}"
+        owner: ""
+        group: "users"
+        mode: '0777'
