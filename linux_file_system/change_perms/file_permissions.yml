@@ -1,0 +1,10 @@
+---
+- name: file module dmeo
+  hosts: w
+  vars:
+    myfile: './example.sh'
+  tasks:
+    - name: set execution permissions
+      ansible.builtin.file:
+        dest: "{{myfile}}"
+        mode: 'a+x'
