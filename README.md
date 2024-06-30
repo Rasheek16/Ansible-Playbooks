@@ -1,4 +1,4 @@
-# Ansible Playbooks
+# Ansible Workflows
 
 Welcome to my Ansible playbooks repository! This repo contains various Ansible playbooks categorized for different use cases. I'll be updating it regularly with new content.
 
@@ -30,70 +30,119 @@ Welcome to my Ansible playbooks repository! This repo contains various Ansible p
 │       ├── array.yml
 │       ├── registered_variables.yml
 │       └── variableprint.yml
-├── for simple linux uses
+├── containers
+│   ├── install_docker.yml
+│   ├── start_container.yml
+│   └── stop_container.yml
+├── galaxy
+│   ├── collection
+│   │   ├── collection.yml
+│   │   └── requirements.yml
+│   ├── requirements.yml
+│   └── role.yml
+├── linux_file_system
+│   ├── change_perms
+│   │   ├── example.sh
+│   │   ├── file_permissions.yml
+│   │   ├── file.txt
+│   │   └── file.yml
+│   ├── copy.yml
+│   ├── create_directory.yml
+│   ├── delete_file
+│   │   └── file.yml
+│   ├── directory_check_exists.yml
+│   ├── download_file
+│   │   ├── downloads
+│   │   │   └── ansible-2.9.25.tar.gz
+│   │   └── file.yml
+│   ├── example.txt
+│   ├── file_concatenation
+│   │   ├── concatenate
+│   │   │   ├── a.txt
+│   │   │   ├── b.txt
+│   │   │   ├── includes.yml
+│   │   │   └── output.txt
+│   │   ├── concatenate.yml
+│   │   └── templates
+│   │       └── concatenate.j2
+│   ├── file_exist.yml
+│   ├── file.yml
+│   ├── rename
+│   │   ├── example1
+│   │   │   └── example.txt
+│   │   └── file.yml
+│   └── unarchive
+│       └── file.yml
+├── simple_linux_uses
 │   ├── copy.txt
 │   ├── copy.yml
+│   ├── cron.yml
 │   ├── enable_svc.yml
 │   ├── example.txt
+│   ├── generate_myhosts.yml
 │   ├── hostnames.yml
 │   ├── localhost.yml
 │   ├── placeholder
 │   │   └── placeholder.html.j2
 │   ├── read_file.yml
 │   ├── reboot.yml
+│   ├── remote_file.yml
+│   ├── templates
+│   │   └── hosts.j2
 │   └── template.yml
-└── tree.txt
+├── tree.txt
+└── web_service_api
+    ├── file.yml
+    ├── post_login_correct.yml
+    └── post_login_incorrect.yml
 
-9 directories, 28 files
+25 directories, 65 files
 ```
 
 ## Playbook Descriptions
 
 ### Basic Playbooks
 
-- **Conditionals**
-  - `conditional_basic_false.yml`: Demonstrates basic conditional statements.
-  - `conditional_facts.yml`: Uses facts in conditional statements.
+- See `basic/` directory for various basic Ansible playbooks.
 
-- **Facts**
-  - `facts_printall.yml`: Prints all gathered facts.
-  - `facts_printone.yml`: Prints a specific fact.
+### Container Management
 
-- **Handler**
-  - `rollingupdate.yml`: Example of a rolling update using handlers.
+- `containers/`
+  - `install_docker.yml`: Installs Docker.
+  - `start_container.yml`: Starts a Docker container.
+  - `stop_container.yml`: Stops a Docker container.
 
-- `helloworld_debug.yml`: A simple playbook to print "Hello, World!" with debug information.
-- `helloworld.yml`: A basic "Hello, World!" playbook.
+### Ansible Galaxy Integration
 
-- **Loop**
-  - `loop_hash_or_dict.yml`: Loops through a hash or dictionary.
-  - `loop_simple.yml`: Simple loop example.
-  - `loop_with_items.yml`: Loop with multiple items.
+- `galaxy/`
+  - Contains Ansible Galaxy related playbooks and requirements.
 
-- `multipleplays.yml`: Playbook with multiple plays.
-- `privilege_escalation.yml`: Example of privilege escalation.
+### Linux File System Operations
 
-- **Role**
-  - `role_simple.yml`: Simple role example.
-  - `role_vars.yml`: Role with variables.
-
-- **Variables**
-  - `array.yml`: Demonstrates array variables.
-  - `registered_variables.yml`: Shows how to use registered variables.
-  - `variableprint.yml`: Prints variables.
+- `linux_file_system/`
+  - Various operations related to file system management on Linux.
 
 ### Simple Linux Use Cases
 
-- `copy.txt`: Example text file for copy operation.
-- `copy.yml`: Playbook to copy files.
-- `enable_svc.yml`: Enables a service.
-- `example.txt`: Example text file.
-- `hostnames.yml`: Manages hostnames.
-- `localhost.yml`: Playbook for local host operations.
-- `placeholder/placeholder.html.j2`: Placeholder HTML template.
-- `read_file.yml`: Reads a file.
-- `reboot.yml`: Reboots the system.
-- `template.yml`: Uses a template.
+- `simple_linux_uses/`
+  - Playbooks for common Linux operations and configurations.
 
-Happy automating! If you have any questions or suggestions, feel free to open an issue or connect with me on social media.
+### Web Service API Interactions
 
+- `web_service_api/`
+  - Playbooks for interacting with web service APIs.
+
+## How to Use
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/Rasheek16/Ansible-workflows.git
+   ```
+2. Navigate to the directory:
+   ```
+   cd Ansible-workflows
+   ```
+3. Run the desired playbook with Ansible:
+   ```
+   ansible-playbook path/to/playbook.yml
+   ```

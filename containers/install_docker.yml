@@ -29,7 +29,6 @@
     - name: install Docker packages
       ansible.builtin.apt:
         name:
-          - docker
           - docker.io
           - docker-compose
           - docker-registry
