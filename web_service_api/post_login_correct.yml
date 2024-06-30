@@ -12,8 +12,8 @@
         method: POST
         body_format: json
         body: '{
-          "email": "eve.holt@reqres.in",
-          "password": "cityslicka"
+          "email": "",
+          "password": ""
         }'
         status_code: 200
         timeout: 30
