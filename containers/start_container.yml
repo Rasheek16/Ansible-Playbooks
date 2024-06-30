@@ -1,0 +1,11 @@
+---
+- name: Create container
+  hosts: w
+  become: true
+  vars:
+    ansible_become_password: 
+  tasks:
+    - name: Create a data container
+      community.docker.docker_container:
+        name: mydata
+        image: rasheek/one
