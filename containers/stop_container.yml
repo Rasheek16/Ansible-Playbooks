@@ -1,0 +1,12 @@
+---
+- name: stop docker
+  hosts: w
+  become: true
+  vars:
+    ansible_become_password: 
+  tasks:
+    - name: stop docker container
+      community.docker.docker_container:
+        name: mydata
+        state: stopped
+        
